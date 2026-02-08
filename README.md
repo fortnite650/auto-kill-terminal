@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/demo.svg" alt="auto-kill-terminal demo" width="800" />
+</p>
+
 # `auto-kill-terminal`
 
 ## Stop AI agents from leaving zombie terminals in your Codespace
