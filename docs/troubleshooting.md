@@ -44,3 +44,4 @@
 **Cause:** Each agent reads different instruction files. Copilot reads `.github/copilot-instructions.md`, Claude reads `CLAUDE.md`, etc.
 
 **Fix:** Add the rules to ALL agent instruction files you use. The `install.sh --all` flag does this automatically.
+
