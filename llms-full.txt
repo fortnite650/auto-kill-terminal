@@ -125,3 +125,4 @@ The install script auto-detects which agent instruction files already exist in t
 ## Keywords
 
 zombie terminal, ghost terminal, orphaned terminal, VS Code terminal management, AI agent terminal cleanup, GitHub Codespaces terminal issue, isBackground true, kill_terminal, await_terminal, run_in_terminal, copilot terminal stuck, claude terminal issue, agent terminal broken, codespace terminal not working, AI coding agent, VS Code agent instructions, copilot-instructions.md, CLAUDE.md, GEMINI.md, cursorrules, windsurfrules, clinerules, AGENTS.md, terminal lifecycle management, background terminal VS Code
+
