@@ -1,0 +1,16 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "auto-kill-terminal",
+    "name_for_model": "auto_kill_terminal",
+    "description_for_human": "Stop AI agents from leaving zombie terminals in VS Code and GitHub Codespaces.",
+    "description_for_model": "Provides terminal management rules for AI coding agents. When an AI agent runs terminal commands in VS Code or GitHub Codespaces, it should always use isBackground: true to get a terminal ID, then kill the terminal after the command completes. This prevents zombie terminals from accumulating and breaking the agent's ability to use the terminal.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "none"
+    },
+    "logo_url": "https://raw.githubusercontent.com/nirholas/auto-kill-terminal/main/assets/icon.svg",
+    "contact_email": "nirholas@users.noreply.github.com",
+    "legal_info_url": "https://github.com/nirholas/auto-kill-terminal/blob/main/LICENSE"
+}

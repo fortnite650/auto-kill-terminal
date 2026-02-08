@@ -1,0 +1,127 @@
+# auto-kill-terminal — Complete Reference
+
+> Stop AI agents from leaving zombie terminals in VS Code and GitHub Codespaces.
+> Repository: https://github.com/nirholas/auto-kill-terminal
+> License: MIT
+
+## Problem Statement
+
+AI coding agents (GitHub Copilot, Claude Code, Gemini, Cursor, Windsurf, Cline, Aider, Continue.dev) spawn terminal sessions in VS Code every time they run a command. These agents almost never clean up after themselves:
+
+- Foreground terminals get reused — stale shell sessions from previous commands persist and silently block new ones
+- Background terminals are invisible — in GitHub Codespaces, agent-spawned terminals are not shown in the UI panel
+- Agents retry in broken terminals — instead of killing an unresponsive terminal and starting fresh, they keep hammering the same dead session
+- Terminal IDs are lost — if the agent doesn't use `isBackground: true`, no terminal ID is returned, making cleanup impossible
+- Agents stop using terminal entirely — once enough zombie terminals accumulate, the agent detects stale sessions as errors and concludes the terminal system is broken, refusing to run any terminal commands
+
+The only manual fix is to right-click each orphaned terminal in the VS Code panel and select "Kill Terminal" one by one.
+
+## Solution
+
+Five instruction rules added to agent instruction files:
+
+```markdown
+## Terminal Management
+
+- **Always use background terminals** (`isBackground: true`) for every command so a terminal ID is returned
+- **Always kill the terminal** after the command completes, whether it succeeds or fails — never leave terminals open
+- Do not reuse foreground shell sessions — stale sessions block future terminal operations in Codespaces
+- In GitHub Codespaces, agent-spawned terminals may be hidden — they still work. Do not assume a terminal is broken if you cannot see it
+- If a terminal appears unresponsive, kill it and create a new one rather than retrying in the same terminal
+```
+
+## Why isBackground: true Matters
+
+| Mode | Terminal ID returned? | Can be killed programmatically? | Blocks shell? |
+|---|---|---|---|
+| isBackground: false | No | No | Yes |
+| isBackground: true | Yes | Yes (via kill_terminal) | No |
+
+Background terminals return an ID. That ID is the handle agents use to call `kill_terminal` or `await_terminal`. Without that ID, there is no way to programmatically clean up the terminal.
+
+## Agent-Specific Instruction Files
+
+### GitHub Copilot
+File: `.github/copilot-instructions.md`
+Place in your repository's `.github/` directory.
+
+### Claude Code (Anthropic)
+File: `CLAUDE.md`
+Place in your repository root.
+
+### Gemini (Google)
+File: `GEMINI.md`
+Place in your repository root.
+
+### Cursor
+File: `.cursorrules`
+Place in your repository root.
+
+### Windsurf
+File: `.windsurfrules`
+Place in your repository root.
+
+### Cline
+File: `.clinerules`
+Place in your repository root.
+
+### Multi-Agent (shared rules)
+File: `AGENTS.md`
+Place in your repository root. Used when multiple agents share the same codebase.
+
+## Short Form Variants
+
+### One-liner
+```
+Terminal rules: Always use isBackground: true for every terminal command, then kill the terminal after.
+```
+
+### Two-liner
+```
+Terminal management: Always use background terminals (isBackground: true), always kill terminals after commands complete. Do not reuse foreground shell sessions.
+```
+
+## Install Script
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nirholas/auto-kill-terminal/main/install.sh | bash
+```
+
+The install script auto-detects which agent instruction files already exist in the current directory and appends the terminal management section. Use `--dry-run` to preview changes without modifying files.
+
+## Expected Agent Behavior After Adding Rules
+
+1. Agent needs to run a command
+2. Spawns background terminal with isBackground: true → gets terminal ID
+3. Awaits completion via await_terminal
+4. Reads output
+5. Kills terminal via kill_terminal
+6. Moves on to next task
+
+## Supported Environments
+
+- GitHub Codespaces (where the problem is most severe due to hidden terminals)
+- VS Code local
+- VS Code remote SSH
+- VS Code WSL
+- VS Code in browser (vscode.dev, github.dev)
+- Gitpod
+- DevPod
+- Any environment where AI agents use VS Code's terminal API
+
+## Tested Agents
+
+| Agent | Status |
+|---|---|
+| GitHub Copilot (VS Code) | Tested, works |
+| Claude Code | Tested, works |
+| Gemini | Tested, works |
+| Cursor | Compatible |
+| Windsurf | Compatible |
+| Cline | Untested |
+| Aider | Untested |
+| Continue.dev | Untested |
+
+## Keywords
+
+zombie terminal, ghost terminal, orphaned terminal, VS Code terminal management, AI agent terminal cleanup, GitHub Codespaces terminal issue, isBackground true, kill_terminal, await_terminal, run_in_terminal, copilot terminal stuck, claude terminal issue, agent terminal broken, codespace terminal not working, AI coding agent, VS Code agent instructions, copilot-instructions.md, CLAUDE.md, GEMINI.md, cursorrules, windsurfrules, clinerules, AGENTS.md, terminal lifecycle management, background terminal VS Code

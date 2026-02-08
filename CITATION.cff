@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use auto-kill-terminal, please cite it as below."
+type: software
+title: "auto-kill-terminal"
+abstract: "Stop AI agents from leaving zombie terminals in VS Code and GitHub Codespaces."
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/auto-kill-terminal"
+url: "https://github.com/nirholas/auto-kill-terminal"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-08"
+keywords:
+  - ai-agent
+  - terminal-management
+  - vscode
+  - github-codespaces
+  - developer-experience

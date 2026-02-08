@@ -1,0 +1,41 @@
+{
+    "name": "auto-kill-terminal",
+    "version": "1.0.0",
+    "description": "Stop AI agents from leaving zombie terminals in VS Code and GitHub Codespaces. Copy-paste terminal management rules for GitHub Copilot, Claude Code, Gemini, Cursor, Windsurf, and more.",
+    "keywords": [
+        "ai-agent",
+        "terminal",
+        "vscode",
+        "github-codespaces",
+        "copilot",
+        "claude",
+        "gemini",
+        "cursor",
+        "windsurf",
+        "cline",
+        "zombie-terminal",
+        "terminal-management",
+        "agent-instructions",
+        "copilot-instructions",
+        "isBackground",
+        "kill-terminal",
+        "devcontainer",
+        "codespaces",
+        "developer-tools",
+        "dx"
+    ],
+    "homepage": "https://github.com/nirholas/auto-kill-terminal",
+    "bugs": {
+        "url": "https://github.com/nirholas/auto-kill-terminal/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nirholas/auto-kill-terminal.git"
+    },
+    "license": "MIT",
+    "author": "nirholas",
+    "type": "module",
+    "bin": {
+        "auto-kill-terminal": "./install.sh"
+    }
+}

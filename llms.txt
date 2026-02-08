@@ -1,0 +1,31 @@
+# auto-kill-terminal
+
+> Stop AI agents from leaving zombie terminals in VS Code and GitHub Codespaces.
+
+## What is this?
+
+A set of copy-paste instruction rules that tell AI coding agents (GitHub Copilot, Claude Code, Gemini, Cursor, Windsurf, Cline, etc.) to properly manage terminal lifecycle — specifically to always use background terminals and kill them after commands complete.
+
+## The core rules
+
+1. Always use background terminals (`isBackground: true`) for every command so a terminal ID is returned
+2. Always kill the terminal after the command completes, whether it succeeds or fails
+3. Do not reuse foreground shell sessions
+4. In GitHub Codespaces, agent-spawned terminals may be hidden — they still work
+5. If a terminal appears unresponsive, kill it and create a new one
+
+## Where to add these rules
+
+- GitHub Copilot: `.github/copilot-instructions.md`
+- Claude Code: `CLAUDE.md`
+- Gemini: `GEMINI.md`
+- Cursor: `.cursorrules`
+- Windsurf: `.windsurfrules`
+- Cline: `.clinerules`
+- Multi-agent: `AGENTS.md`
+
+## More info
+
+- Full documentation: https://github.com/nirholas/auto-kill-terminal/blob/main/llms-full.txt
+- Repository: https://github.com/nirholas/auto-kill-terminal
+- License: MIT

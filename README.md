@@ -1,16 +1,62 @@
+# 💀 auto-kill-terminal
+
+<p align="center">
+<pre align="center">
+ █████╗ ██╗   ██╗████████╗ ██████╗       ██╗  ██╗██╗██╗     ██╗     
+██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗      ██║ ██╔╝██║██║     ██║     
+███████║██║   ██║   ██║   ██║   ██║█████╗█████╔╝ ██║██║     ██║     
+██╔══██║██║   ██║   ██║   ██║   ██║╚════╝██╔═██╗ ██║██║     ██║     
+██║  ██║╚██████╔╝   ██║   ╚██████╔╝      ██║  ██╗██║███████╗███████╗
+╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝       ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝
+    ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     
+    ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║     
+       ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║     
+       ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║     
+       ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗
+       ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
+</pre>
+</p>
+
+<p align="center">
+  <strong>Stop AI agents from leaving zombie terminals in your Codespace.</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AI%20Agents-Terminal%20Cleanup-ef4444?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHRleHQgeT0iMTgiIGZvbnQtc2l6ZT0iMTgiPvCfkoA8L3RleHQ+PC9zdmc+" alt="AI Agent Terminal Cleanup">
+  <img src="https://img.shields.io/badge/VS%20Code-Compatible-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white" alt="VS Code Compatible">
+  <img src="https://img.shields.io/badge/Codespaces-Ready-2b3137?style=for-the-badge&logo=github&logoColor=white" alt="Codespaces Ready">
+</p>
+
+<p align="center">
+  <a href="https://github.com/nirholas/auto-kill-terminal/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License"></a>
+  <a href="https://github.com/nirholas/auto-kill-terminal/stargazers"><img src="https://img.shields.io/github/stars/nirholas/auto-kill-terminal?style=for-the-badge&logo=github&color=yellow" alt="GitHub Stars"></a>
+  <a href="https://github.com/nirholas/auto-kill-terminal/issues"><img src="https://img.shields.io/github/issues/nirholas/auto-kill-terminal?style=for-the-badge&color=orange" alt="Issues"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Copilot-Supported-6366f1?style=for-the-badge&logo=github-copilot&logoColor=white" alt="GitHub Copilot">
+  <img src="https://img.shields.io/badge/Claude-Supported-d97706?style=for-the-badge" alt="Claude Code">
+  <img src="https://img.shields.io/badge/Gemini-Supported-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini">
+  <img src="https://img.shields.io/badge/Cursor-Supported-000000?style=for-the-badge" alt="Cursor">
+</p>
+
+<p align="center">
+  <a href="#the-problem">Problem</a> · 
+  <a href="#the-fix">Fix</a> · 
+  <a href="#quick-start">Quick Start</a> · 
+  <a href="#setup-by-agent">Setup</a> · 
+  <a href="#why-background-terminals">Why?</a>
+</p>
+
 <p align="center">
   <img src=".github/demo.svg" alt="auto-kill-terminal demo" width="800" />
 </p>
 
-# `auto-kill-terminal`
-
-## Stop AI agents from leaving zombie terminals in your Codespace
-
-AI coding agents (GitHub Copilot, Claude Code, Gemini, etc.) spawn terminal sessions to run commands — but they almost never clean up after themselves. In GitHub Codespaces, these orphaned terminals pile up invisibly, block future operations, and cause agents to hang or behave erratically.
-
-This repo provides **copy-paste terminal management rules** for every major agent instruction file so your AI pair-programmer always cleans up after itself.
+---
 
 ## The Problem
+
+AI coding agents (GitHub Copilot, Claude Code, Gemini, etc.) spawn terminal sessions to run commands — but they almost never clean up after themselves. In GitHub Codespaces, these orphaned terminals pile up invisibly, block future operations, and cause agents to hang or behave erratically.
 
 When AI agents use VS Code's `run_in_terminal` tool:
 
@@ -112,14 +158,14 @@ Copy the files from this repo into your project:
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USER/auto-kill-terminal.git
+git clone https://github.com/nirholas/auto-kill-terminal.git
 
 # Copy the instruction snippets you need
 cp auto-kill-terminal/.github/copilot-instructions.md your-project/.github/copilot-instructions.md
 cp auto-kill-terminal/CLAUDE.md your-project/CLAUDE.md
 ```
 
-Or just copy the 5 bullet points from The Fix into whatever agent instruction file you already have.
+Or just copy the 5 bullet points from [The Fix](#the-fix) into whatever agent instruction file you already have.
 
 ## Why Background Terminals?
 
@@ -140,3 +186,15 @@ Background terminals return an ID that the agent can pass to `kill_terminal` (or
 
 MIT
 
+---
+
+<p align="center">
+  <b>Stop wasting tokens on zombie terminals. Copy 5 lines. Done.</b><br>
+  <sub>Made with 💀 for the AI agent community</sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/nirholas/auto-kill-terminal/stargazers">
+    <img src="https://img.shields.io/github/stars/nirholas/auto-kill-terminal?style=social" alt="Star on GitHub">
+  </a>
+</p>

@@ -1,0 +1,16 @@
+# Terminal Management Rules
+
+## Always use background terminals
+Use `isBackground: true` for every command so a terminal ID is returned.
+
+## Always kill the terminal
+After the command completes, whether it succeeds or fails — never leave terminals open.
+
+## Do not reuse foreground shell sessions
+Stale sessions block future terminal operations in Codespaces.
+
+## Agent-spawned terminals may be hidden
+In GitHub Codespaces, agent-spawned terminals may be hidden — they still work. Do not assume a terminal is broken if you cannot see it.
+
+## Kill unresponsive terminals
+If a terminal appears unresponsive, kill it and create a new one rather than retrying in the same terminal.
