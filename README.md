@@ -170,10 +170,10 @@ Background terminals return an ID that the agent can pass to `kill_terminal` (or
   Agent                                Terminal
     |                                      |
     |-- run_in_terminal -----------------> | (isBackground: true)
-    |   <-- terminal_id: a7b3c9d1         |
+    |   <-- terminal_id: a7b3c9d1          |
     |                                      |
     |-- await_terminal ------------------> | (wait for completion)
-    |   <-- output + exit code            |
+    |   <-- output + exit code             |
     |                                      |
     |-- kill_terminal -------------------> | x_x
     |                                      X
